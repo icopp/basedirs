@@ -1,12 +1,14 @@
-/**
- * @external
- */
-
 import os from 'os'
-import ffi from 'ffi'
-import ref from 'ref'
 import { Platform, KNOWNFOLDERID } from '../constants'
 import parseWindowsGuid from './parse-windows-guid'
+
+// These have to use `require` rather than `import` because `ref` and `ffi` are
+// totally broken in Jest on non-Windows platforms, such that ever referencing
+// them more than one in any way makes all tests fail with `RangeError`s. To
+// work around that we use a dummy instead if it's not Windows.
+
+const ffi = os.platform() === Platform.Windows ? require('ffi') : {}
+const ref = os.platform() === Platform.Windows ? require('ref') : {}
 
 const shell32: {
   /**
@@ -48,6 +50,10 @@ const shell32: {
  *                 `Shell32.SHGetKnownFolderPath`
  */
 export default function getWindowsKnownFolderPath(guid: KNOWNFOLDERID): string {
+  if (os.platform() !== Platform.Windows) {
+    throw new Error('getWindowsKnownFolderPath only usable on Windows')
+  }
+
   let guidPtr = ref.alloc(ref.types.void, parseWindowsGuid(guid))
   let pathPtr = ref.alloc(ref.refType(ref.refType(ref.types.void)))
 
