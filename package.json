@@ -1,6 +1,6 @@
 {
   "name": "basedirs",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Get the appropriate base directory paths for the current OS",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
