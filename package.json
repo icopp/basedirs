@@ -1,10 +1,14 @@
 {
   "name": "basedirs",
-  "version": "0.0.0",
+  "version": "0.0.0-development",
   "description": "Get the appropriate base directory paths for the current OS",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "author": "Ian Copp <copp.ian@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/icopp/basedirs.git"
+  },
   "license": "MIT",
   "private": false,
   "files": [
@@ -15,7 +19,8 @@
     "test": "jest",
     "prebuild": "tsc --emitDeclarationOnly",
     "build": "parcel build -t node src/index.ts",
-    "prepublishOnly": "run-s build"
+    "prepublishOnly": "run-s build",
+    "semantic-release": "semantic-release"
   },
   "husky": {
     "hooks": {
@@ -44,8 +49,13 @@
     "@babel/polyfill": "^7.2.0",
     "@commitlint/cli": "^7.5.0",
     "@commitlint/config-conventional": "^7.5.0",
+    "@semantic-release/commit-analyzer": "^6.1.0",
+    "@semantic-release/git": "^7.0.0",
+    "@semantic-release/github": "^5.2.0",
+    "@semantic-release/npm": "^5.1.0",
+    "@semantic-release/release-notes-generator": "^7.1.0",
     "@types/ffi": "^0.2.0",
-    "@types/jest": "^23.3.13",
+    "@types/jest": "^23.3.0",
     "@types/ref": "^0.0.28",
     "@types/yargs": "^12.0.0",
     "@typescript-eslint/eslint-plugin": "^1.2.0",
@@ -68,7 +78,8 @@
     "npm-run-all": "^4.1.0",
     "parcel-bundler": "^1.11.0",
     "prettier": "^1.16.0",
-    "ts-jest": "^23.10.5",
+    "semantic-release": "^15.13.0",
+    "ts-jest": "^23.10.0",
     "ts-node": "^8.0.2",
     "typescript": "^3.3.0"
   },
@@ -78,6 +89,16 @@
     "yargs": "^12.0.0"
   },
   "resolutions": {
-    "@typescript-eslint/eslint-plugin/typescript": "^3.3.0"
+    "@typescript-eslint/eslint-plugin/typescript": "^3.3.0",
+    "ts-jest/jest": "^24.0.0"
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/npm",
+      "@semantic-release/git",
+      "@semantic-release/github"
+    ]
   }
 }
