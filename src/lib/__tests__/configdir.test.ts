@@ -15,9 +15,9 @@ test('configdir on Linux', () => {
   }
 
   delete process.env.XDG_CONFIG_HOME
-  expect(configdir()).toBe(path.join(os.homedir(), '.cache'))
+  expect(configdir()).toBe(path.join(os.homedir(), '.config'))
   expect(configdir(DUMMY_APP_NAME)).toBe(
-    path.join(os.homedir(), '.cache', DUMMY_APP_NAME_SNAKE_CASE)
+    path.join(os.homedir(), '.config', DUMMY_APP_NAME_SNAKE_CASE)
   )
 
   process.env.XDG_CONFIG_HOME = DUMMY_APP_PATH

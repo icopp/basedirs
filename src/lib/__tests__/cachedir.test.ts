@@ -14,13 +14,13 @@ test('cachedir on Linux', () => {
     return
   }
 
-  delete process.env.XDG_CONFIG_HOME
+  delete process.env.XDG_CACHE_HOME
   expect(cachedir()).toBe(path.join(os.homedir(), '.cache'))
   expect(cachedir(DUMMY_APP_NAME)).toBe(
     path.join(os.homedir(), '.cache', DUMMY_APP_NAME_SNAKE_CASE)
   )
 
-  process.env.XDG_CONFIG_HOME = DUMMY_APP_PATH
+  process.env.XDG_CACHE_HOME = DUMMY_APP_PATH
   expect(cachedir()).toBe(DUMMY_APP_PATH)
   expect(cachedir(DUMMY_APP_NAME)).toBe(
     path.join(DUMMY_APP_PATH, DUMMY_APP_NAME_SNAKE_CASE)
