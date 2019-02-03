@@ -4,13 +4,16 @@ Get base directory paths appropriate to your OS.
 
 ## Specs
 
-- https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
-- https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html#//apple_ref/doc/uid/TP40010672-CH2-SW6
+- [XDG Base Directory Specification, version 0.7](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html)
+  and
+  [\$XDG_BIN_HOME proposal](https://theos.kyriasis.com/~kyrias/basedir-spec.html)
+- [macOS File System Programming Guide, macOS Standard Directories](https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html#//apple_ref/doc/uid/TP40010672-CH2-SW6)
+- [KNOWNFOLDERID definitions](https://docs.microsoft.com/en-us/windows/desktop/shell/knownfolderid)
 
 ## Precedent
 
-- https://github.com/soc/directories-jvm
-- https://doc-snapshots.qt.io/qt5-dev/qstandardpaths.html
+- [io.github.soc:directories](https://github.com/soc/directories-jvm)
+- [QStandardPaths for QT](https://doc-snapshots.qt.io/qt5-dev/qstandardpaths.html)
 
 ## Usage
 
