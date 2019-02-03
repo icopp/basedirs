@@ -1,8 +1,4 @@
 /**
- * @external
- */
-
-/**
  * Translate a Windows-style GUID into an array of bytes. This includes having
  * to reverse the first two chunks of the string-input GUID.
  */
