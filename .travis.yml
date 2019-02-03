@@ -1,8 +1,8 @@
 language: node_js
 
 node_js:
-  - 8
-  - 10
+  - lts/*
+  - node
 
 os:
   - linux
@@ -19,11 +19,13 @@ jobs:
   include:
     - stage: lint
       script: yarn lint
+      node_js: node
     - stage: build
       script: yarn build
+      node_js: node
     - stage: release
       if: branch = master
-      node_js: lts/*
+      node_js: node
       deploy:
         provider: script
         skip_cleanup: true
