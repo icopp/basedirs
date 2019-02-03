@@ -28,7 +28,7 @@ action "Build" {
 
 workflow "On pull request merge, delete the branch" {
   on = "pull_request"
-  resolves = ["branch cleanup"]
+  resolves = ["Branch cleanup"]
 }
 
 action "Branch cleanup" {
