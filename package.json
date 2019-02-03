@@ -20,7 +20,7 @@
   "scripts": {
     "lint": "eslint \"src/**/*.ts\"",
     "test": "jest",
-    "test:ci": "jest --no-cache",
+    "test:ci": "jest --ci false --no-cache",
     "prebuild": "tsc --emitDeclarationOnly",
     "build": "parcel build -t node src/index.ts",
     "prepublishOnly": "run-s build",
