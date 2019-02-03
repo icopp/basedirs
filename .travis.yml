@@ -16,6 +16,12 @@ cache:
 
 jobs:
   include:
+    - stage: lint
+      script: yarn lint
+    - stage: test
+      script: yarn test
+    - stage: build
+      script: yarn build
     - stage: release
       if: branch = master
       node_js: lts/*
