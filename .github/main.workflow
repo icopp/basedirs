@@ -4,24 +4,24 @@ workflow "Push" {
 }
 
 action "Install" {
-  uses = "borales/actions-yarn@master"
+  uses = "icopp/actions-yarn@patch-1"
   args = "install"
 }
 
 action "Lint" {
-  uses = "borales/actions-yarn@master"
+  uses = "icopp/actions-yarn@patch-1"
   args = "lint"
   needs = "Install"
 }
 
 action "Test" {
-  uses = "borales/actions-yarn@master"
+  uses = "icopp/actions-yarn@patch-1"
   args = "test"
   needs = "Install"
 }
 
 action "Build" {
-  uses = "borales/actions-yarn@master"
+  uses = "icopp/actions-yarn@patch-1"
   args = "build"
   needs = ["Install", "Lint", "Test"]
 }
@@ -31,7 +31,7 @@ workflow "On pull request merge, delete the branch" {
   resolves = ["branch cleanup"]
 }
 
-action "branch cleanup" {
+action "Branch cleanup" {
   uses = "jessfraz/branch-cleanup-action@master"
   secrets = ["GITHUB_TOKEN"]
 }
