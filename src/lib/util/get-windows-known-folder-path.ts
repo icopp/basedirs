@@ -7,8 +7,12 @@ import parseWindowsGuid from './parse-windows-guid'
 // them more than one in any way makes all tests fail with `RangeError`s. To
 // work around that we use a dummy instead if it's not Windows.
 
-const ffi = os.platform() === Platform.Windows ? require('ffi') : {}
-const ref = os.platform() === Platform.Windows ? require('ref') : {}
+const ffi: typeof import('ffi') =
+  os.platform() === Platform.Windows ? require('ffi') : {}
+
+// eslint-disable-next-line unicorn/prevent-abbreviations
+const ref: typeof import('ref') =
+  os.platform() === Platform.Windows ? require('ref') : {}
 
 const shell32: {
   /**
@@ -39,7 +43,7 @@ const shell32: {
         ],
       })
     : {
-        SHGetKnownFolderPath() {
+        SHGetKnownFolderPath(): void {
           throw new Error('SHGetKnownFolderPath is only usable on Windows')
         },
       }
@@ -54,16 +58,21 @@ export default function getWindowsKnownFolderPath(guid: KNOWNFOLDERID): string {
     throw new Error('getWindowsKnownFolderPath only usable on Windows')
   }
 
-  let guidPtr = ref.alloc(ref.types.void, parseWindowsGuid(guid))
-  let pathPtr = ref.alloc(ref.refType(ref.refType(ref.types.void)))
+  const guidPointer = ref.alloc(ref.types.void, parseWindowsGuid(guid))
+  const pathPointer = ref.alloc(ref.refType(ref.refType(ref.types.void)))
 
-  let status = shell32.SHGetKnownFolderPath(guidPtr, 0, ref.NULL, pathPtr)
+  const status = shell32.SHGetKnownFolderPath(
+    guidPointer,
+    0,
+    ref.NULL,
+    pathPointer
+  )
   if (status !== 0) {
     throw new Error(`Error occurred getting path: ${status}`)
   }
 
-  let pathStr = ref.readPointer(pathPtr, 0, 200)
-  return pathStr
+  const pathString = ref.readPointer(pathPointer, 0, 200)
+  return pathString
     .toString('ucs2')
-    .substring(0, (pathStr.indexOf('\0\0') + 1) / 2)
+    .slice(0, (pathString.indexOf('\0\0') + 1) / 2)
 }

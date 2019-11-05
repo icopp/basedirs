@@ -5,7 +5,7 @@
 export default function parseWindowsGuid(guid: string): number[] {
   return guid
     .split('-')
-    .map(val => [...Buffer.from(val, 'hex')])
-    .map((val, i) => (i < 3 ? val.reverse() : val))
-    .reduce((prev, val) => [...prev, ...val], [])
+    .map(value => [...Buffer.from(value, 'hex')])
+    .map((value, i) => (i < 3 ? value.reverse() : value))
+    .reduce((accumulator, value) => [...accumulator, ...value], [])
 }

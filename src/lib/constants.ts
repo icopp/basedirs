@@ -150,6 +150,7 @@ export enum KNOWNFOLDERID {
    * Windows Vista. The file system directory that contains resource data. A
    * typical path is `%windir%\Resources`.
    */
+  // eslint-disable-next-line unicorn/prevent-abbreviations
   FOLDERID_LocalizedResourcesDir = '2A00375E-224C-49DE-B8D1-440DF7EF3DDC',
   /**
    * The file system directory that serves as a common repository for music
@@ -278,6 +279,7 @@ export enum KNOWNFOLDERID {
    * Windows Vista. The file system directory that contains resource data. A
    * typical path is `%windir%\Resources`.
    */
+  // eslint-disable-next-line unicorn/prevent-abbreviations
   FOLDERID_ResourceDir = '8AD10C31-2ADB-4296-A8F7-E4701232C972',
   FOLDERID_Ringtones = 'C870044B-F49E-4126-A9C3-B52A1FF411E8',
   /**
