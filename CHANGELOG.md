@@ -1,3 +1,11 @@
+## [2.0.1](https://github.com/icopp/basedirs/compare/v2.0.0...v2.0.1) (2020-09-12)
+
+
+### Bug Fixes
+
+* don't bundle code from node_modules ([a292e4d](https://github.com/icopp/basedirs/commit/a292e4d7fe8c1c9234abdc8ce44b8c12b4ff0f7c))
+* remove unused additional dependencies ([7ec8c22](https://github.com/icopp/basedirs/commit/7ec8c2212bc15037af9b443c3680be75f1458e04))
+
 # [2.0.0](https://github.com/icopp/basedirs/compare/v1.0.3...v2.0.0) (2020-09-12)
 
 
