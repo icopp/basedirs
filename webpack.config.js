@@ -1,9 +1,11 @@
 var path = require('path')
+var nodeExternals = require('webpack-node-externals')
 
 module.exports = {
   entry: path.resolve(__dirname, 'src', 'index.ts'),
   devtool: 'inline-source-map',
   target: 'node',
+  externals: [nodeExternals()],
   module: {
     rules: [
       {
