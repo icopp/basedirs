@@ -1,3 +1,16 @@
+# [2.0.0](https://github.com/icopp/basedirs/compare/v1.0.3...v2.0.0) (2020-09-12)
+
+
+### Features
+
+* update dependency versions ([0424b44](https://github.com/icopp/basedirs/commit/0424b442847277cc244684d244e66cbbbddc0891))
+* update for Node >=10 ([545be79](https://github.com/icopp/basedirs/commit/545be7901ce3ff9445051f404b7ca865ff993775))
+
+
+### BREAKING CHANGES
+
+* updates for Node >=10, no longer compatible with Node <10
+
 ## [1.0.3](https://github.com/icopp/basedirs/compare/v1.0.2...v1.0.3) (2019-02-03)
 
 
