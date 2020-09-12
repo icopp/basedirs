@@ -57,7 +57,6 @@
     "@types/ffi-napi": "^2.4.0",
     "@types/jest": "^26.0.0",
     "@types/ref-napi": "^1.4.0",
-    "@types/yargs": "^15.0.0",
     "@typescript-eslint/eslint-plugin": "^4.1.0",
     "@typescript-eslint/parser": "^4.1.0",
     "eslint": "^7.8.0",
