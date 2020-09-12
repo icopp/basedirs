@@ -84,10 +84,8 @@
     "webpack-node-externals": "^2.5.0"
   },
   "dependencies": {
-    "core-js": "^3.6.0",
     "ffi-napi": "^3.0.0",
-    "ref-napi": "^3.0.0",
-    "regenerator-runtime": "^0.13.0"
+    "ref-napi": "^3.0.0"
   },
   "release": {
     "plugins": [
