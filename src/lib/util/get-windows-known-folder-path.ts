@@ -7,12 +7,12 @@ import parseWindowsGuid from './parse-windows-guid'
 // them more than one in any way makes all tests fail with `RangeError`s. To
 // work around that we use a dummy instead if it's not Windows.
 
-const ffi: typeof import('ffi') =
-  os.platform() === Platform.Windows ? require('ffi') : {}
+const ffi: typeof import('ffi-napi') =
+  os.platform() === Platform.Windows ? require('ffi-napi') : {}
 
 // eslint-disable-next-line unicorn/prevent-abbreviations
-const ref: typeof import('ref') =
-  os.platform() === Platform.Windows ? require('ref') : {}
+const ref: typeof import('ref-napi') =
+  os.platform() === Platform.Windows ? require('ref-napi') : {}
 
 const shell32: {
   /**

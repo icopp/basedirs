@@ -4,13 +4,13 @@
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
+  "plugins": ["@typescript-eslint"],
   "extends": [
     "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
     "standard",
     "plugin:unicorn/recommended",
-    "plugin:@typescript-eslint/recommended",
     "prettier",
-    "prettier/babel",
     "prettier/standard",
     "prettier/unicorn",
     "prettier/@typescript-eslint"
@@ -19,7 +19,19 @@
     {
       "files": ["*.test.ts", "__tests__/**/*.ts"],
       "env": { "jest": true }
+    },
+    {
+      "files": ["webpack.config.js"],
+      "rules": {
+        "@typescript-eslint/no-var-requires": "off"
+      }
     }
   ],
-  "rules": { "import/export": "off" }
+  "rules": {
+    "camelcase": "off",
+    "import/export": "off",
+    "no-redeclare": "off",
+    "unicorn/no-null": "off",
+    "unicorn/no-reduce": "off"
+  }
 }

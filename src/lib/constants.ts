@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/camelcase */
-
 export enum Platform {
   AIX = 'aix',
   Android = 'android',
