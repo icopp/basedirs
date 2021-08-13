@@ -55,7 +55,7 @@
     "@semantic-release/npm": "^7.0.0",
     "@semantic-release/release-notes-generator": "^9.0.0",
     "@types/ffi-napi": "^2.4.0",
-    "@types/jest": "^26.0.0",
+    "@types/jest": "^27.0.1",
     "@types/ref-napi": "^1.4.0",
     "@typescript-eslint/eslint-plugin": "^4.1.0",
     "@typescript-eslint/parser": "^4.1.0",
